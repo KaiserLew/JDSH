@@ -13,7 +13,7 @@ class JDSH:
         self.logger = log
         self.config = config
 
-        torch.manual_seed(125)
+        torch.manual_seed(1)
         torch.cuda.manual_seed_all(1)
         torch.cuda.set_device(self.config.GPU_ID)
 
