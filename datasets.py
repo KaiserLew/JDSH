@@ -2,7 +2,7 @@ import torch
 import cv2
 import scipy.io as scio
 from PIL import Image
-import config
+from args import config
 import numpy as np
 import scipy.io as scio
 from torchvision import transforms
