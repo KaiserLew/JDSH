@@ -1,6 +1,7 @@
 # JDSH
 Joint-modal Distribution-based Similarity Hashing for Large-scale Unsupervised Deep Cross-modal Retrieval
 
+More details will be updated soon.
 
 ### Requirements
 Please, install the following packages:
