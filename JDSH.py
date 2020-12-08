@@ -128,9 +128,9 @@ class JDSH:
         S_high = F.normalize(S_I).mm(F.normalize(S_T).t())
         S_ = self.config.alpha * S_I + self.config.beta * S_T + self.config.lamb * (S_high + S_high.t()) / 2
 
-        S_ones = torch.ones_like(S_).cuda()
-        S_eye = torch.eye(S_.size(0), S_.size(1)).cuda()
-        S_mask = S_ones - S_eye
+#         S_ones = torch.ones_like(S_).cuda()
+#         S_eye = torch.eye(S_.size(0), S_.size(1)).cuda()
+#         S_mask = S_ones - S_eye
 
         left = self.config.LOC_LEFT - self.config.ALPHA * self.config.SCALE_LEFT
         right = self.config.LOC_RIGHT + self.config.BETA * self.config.SCALE_RIGHT
