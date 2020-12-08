@@ -154,9 +154,9 @@ class JDSH:
         BI_BT = B_I.mm(B_T.t())
         BT_BI = B_T.mm(B_I.t())
 
-        loss1 = ((BI_BI - S) ** 2).mean()
-        loss2 = ((BI_BT - S) ** 2).mean() + ((BT_BI - S) ** 2).mean() -(B_I * B_T).sum(dim=1).mean()
-        loss3 = ((BT_BT - S) ** 2).mean()
+        loss1 = F.mse_loss(BI_BI, S)
+        loss2 = F.mse_loss(BI_BT, S) + F.mse_loss(BT_BI, S) -(B_I * B_T).sum(dim=1).mean()
+        loss3 = F.mse_loss(BT_BT, S)
 
         loss = self.config.INTRA * loss1 + loss2 + self.config.INTRA * loss3
 
